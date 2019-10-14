@@ -1,4 +1,4 @@
-# tictactoe
+# Tic Tac Toe
 Minimalist tic tac toe game using just the basics 🔨
 
 ## stack
