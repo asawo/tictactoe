@@ -8,11 +8,35 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
     />
-    <link rel="stylesheet" src="style.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Tic Tac Toe</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="container" id="header">
+      <h3 class="title">Tic Tac Toe</h3>
+    </div>
+    <!--grid-->
+    <div class="container" id="grid">
+      <div id="rowOne" class="rows">
+        <button>Button</button> <button>Button</button> <button>Button</button>
+      </div>
+      <div id="rowTwo" class="rows">
+        <button>Button</button> <button>Button</button> <button>Button</button>
+      </div>
+      <div id="rowThree" class="rows">
+        <button>Button</button> <button>Button</button> <button>Button</button>
+      </div>
+    </div>
+    <!--score and reset div-->
+    <div id="footer">
+      <div id="scoreSection">
+        <p>Score A</p>
+        <p>Score B</p>
+      </div>
+      <div id="resetButton">
+        <button>Refresh</button>
+      </div>
+    </div>
   </body>
   <script src="app.js"></script>
 </html>

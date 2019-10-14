@@ -1,0 +1,52 @@
+body {
+  height: 100%;
+  padding: 0;
+}
+
+#header {
+  width: 100%;
+  padding-top: 5%;
+  text-align: center;
+  color: orange;
+}
+
+#grid {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+#grid button {
+  color: orange;
+  border-color: orange;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  margin: 4px;
+  opacity: 0.6;
+}
+
+#grid button:hover {
+  opacity: 1;
+}
+
+.rows {
+  padding-top: 5px;
+}
+
+#footer {
+  padding-top: 20px;
+  width: 450px;
+  margin: auto;
+}
+
+#scoreSection {
+  width: 250px;
+  float: left;
+}
+
+#resetButton {
+  text-align: right;
+  width: 200px;
+  float: left;
+}
