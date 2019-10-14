@@ -1,6 +1,5 @@
 body {
   height: 100%;
-  padding: 0;
 }
 
 #header {
@@ -19,9 +18,8 @@ body {
 #grid button {
   color: orange;
   border-color: orange;
-  text-align: center;
-  height: 150px;
-  width: 150px;
+  height: 125px;
+  width: 125px;
   margin: 4px;
   opacity: 0.6;
 }
@@ -36,12 +34,12 @@ body {
 
 #footer {
   padding-top: 20px;
-  width: 450px;
+  width: 400px;
   margin: auto;
 }
 
 #scoreSection {
-  width: 250px;
+  width: 200px;
   float: left;
 }
 
