@@ -125,7 +125,7 @@ btn9.addEventListener("click", function() {
   console.log("button 9 pushed, turn " + turn);
 });
 
-//reset
+//Reset
 resetBtn.addEventListener("click", function() {
   location.reload();
   console.log("reset");

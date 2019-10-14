@@ -31,6 +31,10 @@ body {
   opacity: 1;
 }
 
+#grid button:disabled {
+  opacity: 1;
+}
+
 .rows {
   padding-top: 5px;
 }
