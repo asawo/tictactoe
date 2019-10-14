@@ -22,6 +22,9 @@ body {
   width: 125px;
   margin: 4px;
   opacity: 0.6;
+  padding: 0;
+  font-size: 30pt;
+  font-weight: 1;
 }
 
 #grid button:hover {
@@ -43,8 +46,22 @@ body {
   float: left;
 }
 
-#resetButton {
+#footerRight {
   text-align: right;
   width: 200px;
   float: left;
+}
+
+#footerRight button {
+  text-align: center;
+  width: 100px;
+  height: 60px;
+  padding: 0px;
+  opacity: 0.5;
+  color: purple;
+  border-color: purple;
+}
+
+#footerRight button:hover {
+  opacity: 1;
 }
