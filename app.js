@@ -18,7 +18,7 @@ for (const button of gridBtn) {
 
 let buttonText = "O",
   turn = 0,
-  game = 0,
+  round = 0,
   scoreX = 0,
   scoreO = 0;
 
@@ -51,12 +51,12 @@ function endRound() {
     buttonText = "O";
     scoreO += 1;
   }
-  game += 1;
+  round += 1;
 
   console.log(
     buttonText +
-      " wins game " +
-      game +
+      " wins round " +
+      round +
       ". Number of wins for X = " +
       scoreX +
       ", O = " +
@@ -70,6 +70,11 @@ function resetGrid() {
   for (const button of gridBtn) {
     button.innerHTML = "";
     button.disabled = false;
+  }
+  if (round % 2 !== 0) {
+    buttonText = "X";
+  } else {
+    buttonText = "O";
   }
 }
 
