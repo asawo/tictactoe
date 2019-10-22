@@ -39,11 +39,11 @@ function nextTurn(e) {
     for (const button of gridBtn) {
       button.disabled = true;
     }
-    nextRound();
+    endRound();
   }
 }
 
-function nextRound() {
+function endRound() {
   if (buttonText === "O") {
     buttonText = "X";
     scoreX += 1;
@@ -63,6 +63,14 @@ function nextRound() {
       scoreO +
       ". Time for next round!"
   );
+  resetGrid();
+}
+
+function resetGrid() {
+  for (const button of gridBtn) {
+    button.innerHTML = "";
+    button.disabled = false;
+  }
 }
 
 function getWinner() {
