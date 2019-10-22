@@ -9,7 +9,12 @@ Game function
 
 //UI elements
 const resetBtn = document.querySelector("#resetBtn"),
-  grid = document.querySelector("#grid");
+  grid = document.querySelector("#grid"),
+  gridBtn = grid.querySelectorAll("div.rows > button");
+
+for (const button of gridBtn) {
+  button.addEventListener("click", move);
+}
 
 // Alternate between button text
 let buttonText = "O",
@@ -28,7 +33,8 @@ function move(e) {
   console.log(e.target.id + " pushed, turn " + turn);
 }
 
-grid.addEventListener("click", move);
+//Add event listener for node list returned by querySelectorll
+// grid.addEventListener("click", move);
 
 //Reset
 resetBtn.addEventListener("click", function() {
