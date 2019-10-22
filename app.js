@@ -8,16 +8,7 @@ Game function
 */
 
 //UI elements
-const btn1 = document.querySelector("#btn1"),
-  btn2 = document.querySelector("#btn2"),
-  btn3 = document.querySelector("#btn3"),
-  btn4 = document.querySelector("#btn4"),
-  btn5 = document.querySelector("#btn5"),
-  btn6 = document.querySelector("#btn6"),
-  btn7 = document.querySelector("#btn7"),
-  btn8 = document.querySelector("#btn8"),
-  btn9 = document.querySelector("#btn9"),
-  resetBtn = document.querySelector("#resetBtn"),
+const resetBtn = document.querySelector("#resetBtn"),
   grid = document.querySelector("#grid");
 
 // Alternate between button text
@@ -25,7 +16,6 @@ let buttonText = "O",
   turn = 0,
   game = 0;
 
-//Listen for click
 function move(e) {
   document.getElementById(e.target.id).innerHTML = buttonText;
   if (buttonText === "O") {
@@ -39,8 +29,6 @@ function move(e) {
 }
 
 grid.addEventListener("click", move);
-
-//look up event listener event object (e) to differentiate between the different clicks
 
 //Reset
 resetBtn.addEventListener("click", function() {
