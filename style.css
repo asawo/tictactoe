@@ -1,5 +1,7 @@
 body {
   height: 100%;
+  margin: auto;
+  width: 350px;
 }
 
 #header {
@@ -11,7 +13,6 @@ body {
 }
 
 #grid {
-  width: 100%;
   text-align: center;
 }
 
