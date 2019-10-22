@@ -63,7 +63,10 @@ function endRound() {
       scoreO +
       ". Time for next round!"
   );
-  resetGrid();
+
+  setTimeout(function() {
+    resetGrid();
+  }, 1000);
 }
 
 function resetGrid() {
