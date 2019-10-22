@@ -1,7 +1,7 @@
 /*
 Game function
 - Player clicks buttons to mark with X or O ✅
-- Player to get 3 X or O in a row wins
+- Player to get 3 X or O in a row wins ✅
 - Notify player when they win
 - Add score when a player wins
 - Clear the grid and scores with a reset button  ✅
@@ -18,7 +18,7 @@ for (const button of gridBtn) {
 
 let buttonText = "O",
   turn = 0,
-  game = 0;
+  game = 1;
 
 function move(e) {
   document.getElementById(e.target.id).innerHTML = buttonText;
@@ -29,11 +29,24 @@ function move(e) {
   }
   document.getElementById(e.target.id).disabled = true;
   turn += 1;
-  getWinner();
-  console.log(e.target.id + " pushed, turn " + turn);
+  console.log(
+    e.target.id + " played, move " + turn + ", " + buttonText + "'s turn"
+  );
+
+  if (getWinner() === true) {
+    for (const button of gridBtn) {
+      button.disabled = true;
+    }
+    game += 1;
+    nextRound();
+  }
 }
 
-//find winner
+function nextRound() {
+  alert("Nice, you've won. Time for next round");
+  console.log("hello winner");
+}
+
 function getWinner() {
   const btn1 = document.querySelector("#btn1"),
     btn2 = document.querySelector("#btn2"),
@@ -50,73 +63,73 @@ function getWinner() {
     btn1.innerHTML == btn4.innerHTML &&
     btn1.innerHTML == btn7.innerHTML
   ) {
-    console.log(btn1.innerHTML + " win");
-    for (const button of gridBtn) {
-      button.disabled = true;
-    }
+    console.log(
+      btn1.innerHTML + " wins game " + game + ". Time for next round!"
+    );
+    return true;
   } else if (
     btn2.innerHTML !== "" &&
     btn2.innerHTML == btn5.innerHTML &&
     btn2.innerHTML == btn8.innerHTML
   ) {
-    console.log(btn2.innerHTML + " win");
-    for (const button of gridBtn) {
-      button.disabled = true;
-    }
+    console.log(
+      btn2.innerHTML + " wins game " + game + ". Time for next round!"
+    );
+    return true;
   } else if (
     btn3.innerHTML !== "" &&
     btn3.innerHTML == btn6.innerHTML &&
     btn3.innerHTML == btn9.innerHTML
   ) {
-    console.log(btn3.innerHTML + " win");
-    for (const button of gridBtn) {
-      button.disabled = true;
-    }
+    console.log(
+      btn3.innerHTML + " wins game " + game + ". Time for next round!"
+    );
+    return true;
   } else if (
     btn1.innerHTML !== "" &&
     btn1.innerHTML == btn2.innerHTML &&
     btn1.innerHTML == btn3.innerHTML
   ) {
-    console.log(btn1.innerHTML + " win");
-    for (const button of gridBtn) {
-      button.disabled = true;
-    }
+    console.log(
+      btn1.innerHTML + " wins game " + game + ". Time for next round!"
+    );
+    return true;
   } else if (
     btn4.innerHTML !== "" &&
     btn4.innerHTML == btn5.innerHTML &&
     btn4.innerHTML == btn6.innerHTML
   ) {
-    console.log(btn4.innerHTML + " win");
-    for (const button of gridBtn) {
-      button.disabled = true;
-    }
+    console.log(
+      btn4.innerHTML + " wins game " + game + ". Time for next round!"
+    );
+    return true;
   } else if (
     btn7.innerHTML !== "" &&
     btn7.innerHTML == btn8.innerHTML &&
     btn7.innerHTML == btn9.innerHTML
   ) {
-    console.log(btn7.innerHTML + " win");
-    for (const button of gridBtn) {
-      button.disabled = true;
-    }
+    console.log(
+      btn7.innerHTML + " wins game " + game + ". Time for next round!"
+    );
+    return true;
   } else if (
     btn1.innerHTML !== "" &&
     btn1.innerHTML == btn5.innerHTML &&
     btn1.innerHTML == btn9.innerHTML
   ) {
-    console.log(btn1.innerHTML + " win");
-    for (const button of gridBtn) {
-      button.disabled = true;
-    }
+    console.log(
+      btn1.innerHTML + " wins game " + game + ". Time for next round!"
+    );
+    return true;
   } else if (
     btn3.innerHTML !== "" &&
     btn3.innerHTML == btn5.innerHTML &&
     btn3.innerHTML == btn7.innerHTML
   ) {
-    console.log(btn3.innerHTML + " win");
-    for (const button of gridBtn) {
-      button.disabled = true;
-    }
+    console.log(
+      btn3.innerHTML + " wins game " + game + ". Time for next round!"
+    );
+    return true;
   }
 }
 
