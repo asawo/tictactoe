@@ -13,14 +13,14 @@ const resetBtn = document.querySelector("#resetBtn"),
   gridBtn = grid.querySelectorAll("div.rows > button");
 
 for (const button of gridBtn) {
-  button.addEventListener("click", move);
+  button.addEventListener("click", nextTurn);
 }
 
 let buttonText = "O",
   turn = 0,
   game = 0;
 
-function move(e) {
+function nextTurn(e) {
   document.getElementById(e.target.id).innerHTML = buttonText;
   if (buttonText === "O") {
     buttonText = "X";
@@ -30,7 +30,7 @@ function move(e) {
   document.getElementById(e.target.id).disabled = true;
   turn += 1;
   console.log(
-    e.target.id + " played, move " + turn + ", " + buttonText + "'s turn"
+    e.target.id + " played, turn " + turn + ", " + buttonText + "'s turn"
   );
 
   if (getWinner() === true) {
