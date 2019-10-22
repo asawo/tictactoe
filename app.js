@@ -18,7 +18,7 @@ for (const button of gridBtn) {
 
 let buttonText = "O",
   turn = 0,
-  game = 1;
+  game = 0;
 
 function move(e) {
   document.getElementById(e.target.id).innerHTML = buttonText;
@@ -37,14 +37,18 @@ function move(e) {
     for (const button of gridBtn) {
       button.disabled = true;
     }
-    game += 1;
     nextRound();
   }
 }
 
 function nextRound() {
-  alert("Nice, you've won. Time for next round");
-  console.log("hello winner");
+  if (buttonText === "O") {
+    buttonText = "X";
+  } else {
+    buttonText = "O";
+  }
+  game += 1;
+  console.log(buttonText + " wins game " + game + ". Time for next round!");
 }
 
 function getWinner() {
@@ -63,72 +67,48 @@ function getWinner() {
     btn1.innerHTML == btn4.innerHTML &&
     btn1.innerHTML == btn7.innerHTML
   ) {
-    console.log(
-      btn1.innerHTML + " wins game " + game + ". Time for next round!"
-    );
     return true;
   } else if (
     btn2.innerHTML !== "" &&
     btn2.innerHTML == btn5.innerHTML &&
     btn2.innerHTML == btn8.innerHTML
   ) {
-    console.log(
-      btn2.innerHTML + " wins game " + game + ". Time for next round!"
-    );
     return true;
   } else if (
     btn3.innerHTML !== "" &&
     btn3.innerHTML == btn6.innerHTML &&
     btn3.innerHTML == btn9.innerHTML
   ) {
-    console.log(
-      btn3.innerHTML + " wins game " + game + ". Time for next round!"
-    );
     return true;
   } else if (
     btn1.innerHTML !== "" &&
     btn1.innerHTML == btn2.innerHTML &&
     btn1.innerHTML == btn3.innerHTML
   ) {
-    console.log(
-      btn1.innerHTML + " wins game " + game + ". Time for next round!"
-    );
     return true;
   } else if (
     btn4.innerHTML !== "" &&
     btn4.innerHTML == btn5.innerHTML &&
     btn4.innerHTML == btn6.innerHTML
   ) {
-    console.log(
-      btn4.innerHTML + " wins game " + game + ". Time for next round!"
-    );
     return true;
   } else if (
     btn7.innerHTML !== "" &&
     btn7.innerHTML == btn8.innerHTML &&
     btn7.innerHTML == btn9.innerHTML
   ) {
-    console.log(
-      btn7.innerHTML + " wins game " + game + ". Time for next round!"
-    );
     return true;
   } else if (
     btn1.innerHTML !== "" &&
     btn1.innerHTML == btn5.innerHTML &&
     btn1.innerHTML == btn9.innerHTML
   ) {
-    console.log(
-      btn1.innerHTML + " wins game " + game + ". Time for next round!"
-    );
     return true;
   } else if (
     btn3.innerHTML !== "" &&
     btn3.innerHTML == btn5.innerHTML &&
     btn3.innerHTML == btn7.innerHTML
   ) {
-    console.log(
-      btn3.innerHTML + " wins game " + game + ". Time for next round!"
-    );
     return true;
   }
 }
