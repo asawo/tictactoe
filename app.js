@@ -18,7 +18,9 @@ for (const button of gridBtn) {
 
 let buttonText = "O",
   turn = 0,
-  game = 0;
+  game = 0,
+  scoreX = 0,
+  scoreO = 0;
 
 function nextTurn(e) {
   document.getElementById(e.target.id).innerHTML = buttonText;
@@ -44,11 +46,23 @@ function nextTurn(e) {
 function nextRound() {
   if (buttonText === "O") {
     buttonText = "X";
+    scoreX += 1;
   } else {
     buttonText = "O";
+    scoreO += 1;
   }
   game += 1;
-  console.log(buttonText + " wins game " + game + ". Time for next round!");
+
+  console.log(
+    buttonText +
+      " wins game " +
+      game +
+      ". Number of wins for X = " +
+      scoreX +
+      ", O = " +
+      scoreO +
+      ". Time for next round!"
+  );
 }
 
 function getWinner() {
