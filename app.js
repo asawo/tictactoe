@@ -17,7 +17,8 @@ const btn1 = document.querySelector("#btn1"),
   btn7 = document.querySelector("#btn7"),
   btn8 = document.querySelector("#btn8"),
   btn9 = document.querySelector("#btn9"),
-  resetBtn = document.querySelector("#resetBtn");
+  resetBtn = document.querySelector("#resetBtn"),
+  grid = document.querySelector("#grid");
 
 // Alternate between button text
 let buttonText = "O",
@@ -25,105 +26,21 @@ let buttonText = "O",
   game = 0;
 
 //Listen for click
-btn1.addEventListener("click", function() {
-  document.querySelector("#btn1").innerHTML = buttonText;
+function move(e) {
+  document.getElementById(e.target.id).innerHTML = buttonText;
   if (buttonText === "O") {
     buttonText = "X";
   } else {
     buttonText = "O";
   }
-  this.disabled = true;
+  document.getElementById(e.target.id).disabled = true;
   turn += 1;
-  console.log("button 1 pushed, turn " + turn);
-});
-btn2.addEventListener("click", function() {
-  document.querySelector("#btn2").innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
-  } else {
-    buttonText = "O";
-  }
-  this.disabled = true;
-  turn += 1;
-  console.log("button 2 pushed, turn " + turn);
-});
-btn3.addEventListener("click", function() {
-  document.querySelector("#btn3").innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
-  } else {
-    buttonText = "O";
-  }
-  this.disabled = true;
-  turn += 1;
-  console.log("button 3 pushed, turn " + turn);
-});
-btn4.addEventListener("click", function() {
-  document.querySelector("#btn4").innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
-  } else {
-    buttonText = "O";
-  }
-  this.disabled = true;
-  turn += 1;
-  console.log("button 4 pushed, turn " + turn);
-});
-btn5.addEventListener("click", function() {
-  document.querySelector("#btn5").innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
-  } else {
-    buttonText = "O";
-  }
-  this.disabled = true;
-  turn += 1;
-  console.log("button 5 pushed, turn " + turn);
-});
-btn6.addEventListener("click", function() {
-  document.querySelector("#btn6").innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
-  } else {
-    buttonText = "O";
-  }
-  this.disabled = true;
-  turn += 1;
-  console.log("button 6 pushed, turn " + turn);
-});
-btn7.addEventListener("click", function() {
-  document.querySelector("#btn7").innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
-  } else {
-    buttonText = "O";
-  }
-  this.disabled = true;
-  turn += 1;
-  console.log("button 7 pushed, turn " + turn);
-});
-btn8.addEventListener("click", function() {
-  document.querySelector("#btn8").innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
-  } else {
-    buttonText = "O";
-  }
-  this.disabled = true;
-  turn += 1;
-  console.log("button 8 pushed, turn " + turn);
-});
-btn9.addEventListener("click", function() {
-  document.querySelector("#btn9").innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
-  } else {
-    buttonText = "O";
-  }
-  this.disabled = true;
-  turn += 1;
-  console.log("button 9 pushed, turn " + turn);
-});
+  console.log(e.target.id + " pushed, turn " + turn);
+}
+
+grid.addEventListener("click", move);
+
+//look up event listener event object (e) to differentiate between the different clicks
 
 //Reset
 resetBtn.addEventListener("click", function() {
