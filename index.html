@@ -8,16 +8,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Asap:700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Tic Tac Toe</title>
   </head>
   <body>
     <div class="container" id="header">
-      <h2 class="title">Tic Tac Toe</h2>
+      <h3 class="title">Tic Tac Toe</h3>
     </div>
     <!--grid-->
     <div id="grid">
@@ -40,15 +37,20 @@
     <!--score and reset div-->
     <div id="footer">
       <div id="scoreSection">
-        <p>Score A</p>
-        <p>Score B</p>
+        <div id="winsO">
+          <span><img src="src/fat_circle.svg" height="25"></img>  </span>
+        </div>
+        <div id="winsX">
+          <span> <img src="src/fat_cross.svg" height="25"></img>  </span>
+        </div>
       </div>
       <div id="footerRight">
         <button id="resetBtn">Reset</button>
       </div>
     </div>
-
-    <!-- make footer -->
-  </body>
+    <!--credit for icons to be added later:
+    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/lyolya" title="Lyolya">Lyolya</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> 
+  --></body>
   <script src="app.js"></script>
 </html>

@@ -10,13 +10,15 @@ Game function
 //UI elements
 const resetBtn = document.querySelector("#resetBtn"),
   grid = document.querySelector("#grid"),
-  gridBtn = grid.querySelectorAll("div.rows > button");
+  gridBtn = grid.querySelectorAll("div.rows > button"),
+  cross = "<img src='src/fat_cross.svg' height='50px'></img>",
+  circle = "<img src='src/fat_circle.svg' height='50px'></img>";
 
 for (const button of gridBtn) {
   button.addEventListener("click", nextTurn);
 }
 
-let buttonText = "O",
+let buttonText = circle,
   turn = 0,
   round = 0,
   scoreX = 0,
@@ -24,10 +26,10 @@ let buttonText = "O",
 
 function nextTurn(e) {
   document.getElementById(e.target.id).innerHTML = buttonText;
-  if (buttonText === "O") {
-    buttonText = "X";
+  if (buttonText === circle) {
+    buttonText = cross;
   } else {
-    buttonText = "O";
+    buttonText = circle;
   }
   document.getElementById(e.target.id).disabled = true;
   turn += 1;
@@ -44,12 +46,18 @@ function nextTurn(e) {
 }
 
 function endRound() {
-  if (buttonText === "O") {
-    buttonText = "X";
+  const winsX = document.getElementById("winsX"),
+    winsO = document.getElementById("winsO"),
+    str = " <img src='src/fat_check.svg' height='20'></img>";
+
+  if (buttonText === circle) {
+    buttonText = cross;
     scoreX += 1;
+    winsX.insertAdjacentHTML("beforeend", str);
   } else {
-    buttonText = "O";
+    buttonText = circle;
     scoreO += 1;
+    winsO.insertAdjacentHTML("beforeend", str);
   }
   round += 1;
 
@@ -66,7 +74,7 @@ function endRound() {
 
   setTimeout(function() {
     resetGrid();
-  }, 1000);
+  }, 2000);
 }
 
 function resetGrid() {
@@ -75,9 +83,9 @@ function resetGrid() {
     button.disabled = false;
   }
   if (round % 2 !== 0) {
-    buttonText = "X";
+    buttonText = cross;
   } else {
-    buttonText = "O";
+    buttonText = circle;
   }
 }
 

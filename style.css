@@ -6,10 +6,14 @@ body {
 
 #header {
   width: 100%;
-  padding-top: 10%;
+  padding-top: 20%;
   padding-bottom: 5%;
   text-align: center;
   color: orange;
+}
+h3 {
+  font-family: "Asap", sans-serif;
+  font-weight: bolder;
 }
 
 #grid {
@@ -25,7 +29,8 @@ body {
   opacity: 0.6;
   padding: 0;
   font-size: 30pt;
-  font-weight: 1;
+  font-weight: 2;
+  border-width: 2px;
   vertical-align: top;
 }
 
@@ -53,6 +58,7 @@ body {
 #scoreSection {
   width: 160px;
   float: left;
+  font-size: 25px;
 }
 
 #footerRight {
@@ -67,8 +73,9 @@ body {
   height: 60px;
   padding: 0px;
   opacity: 0.5;
-  color: purple;
-  border-color: purple;
+  color: rgb(219, 89, 219);
+  border-color: rgb(219, 89, 219);
+  border-width: 2px;
 }
 
 #footerRight button:hover {
