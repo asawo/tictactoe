@@ -42,6 +42,8 @@ function nextTurn(e) {
       button.disabled = true;
     }
     endRound();
+  } else if (turn === 9) {
+    endRound();
   }
 }
 
@@ -72,12 +74,12 @@ function endRound() {
       ". Time for next round!"
   );
 
-  setTimeout(function() {
-    resetGrid();
-  }, 2000);
+  openModal();
 }
 
 function resetGrid() {
+  turn = 0;
+
   for (const button of gridBtn) {
     button.innerHTML = "";
     button.disabled = false;
@@ -156,3 +158,22 @@ resetBtn.addEventListener("click", function() {
   location.reload();
   console.log("reset");
 });
+
+//Modal
+const modal = document.querySelector("#modal"),
+  closeBtn = document.querySelector(".close");
+
+closeBtn.addEventListener("click", function() {
+  modal.style.display = "none";
+  resetGrid();
+});
+
+function openModal() {
+  modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
