@@ -12,8 +12,8 @@ Game function
 const resetBtn = document.querySelector("#resetBtn"),
   grid = document.querySelector("#grid"),
   gridBtn = grid.querySelectorAll("div.rows > button"),
-  cross = "<img src='src/fat_cross.svg' height='50px'></img>",
-  circle = "<img src='src/fat_circle.svg' height='50px'></img>";
+  cross = "<img src='src/fat_cross.svg'></img>",
+  circle = "<img src='src/fat_circle.svg'</img>";
 
 for (const button of gridBtn) {
   button.addEventListener("click", nextTurn);
@@ -52,7 +52,7 @@ function endRound() {
   const winsX = document.getElementById("winsX"),
     winsO = document.getElementById("winsO"),
     modalText = document.querySelector("#modalText"),
-    tick = " <img src='src/fat_check.svg' height='20'></img>";
+    tick = " <img src='src/fat_check.svg'></img>";
   let modalPrompt = buttonText + "wins! Next round?";
 
   if (buttonText === circle) {

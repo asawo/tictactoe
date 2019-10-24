@@ -20,6 +20,13 @@ h3 {
   text-align: center;
 }
 
+#grid img {
+  padding-top: 12px;
+  width: 70px;
+  height: 70px;
+  vertical-align: bottom;
+}
+
 #grid button {
   color: orange;
   border-color: orange;
@@ -59,6 +66,11 @@ h3 {
   width: 160px;
   float: left;
   font-size: 25px;
+}
+
+#scoreSection img {
+  width: 40px;
+  height: 40px;
 }
 
 #footerRight {
@@ -101,6 +113,11 @@ h3 {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+}
+
+.modal img {
+  width: 50px;
+  height: 50px;
 }
 
 .close {
