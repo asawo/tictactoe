@@ -43,8 +43,9 @@ function nextTurn(e) {
       button.disabled = true;
     }
     endRound();
-  } else if (turn === 9) {
-    endRound();
+  } else if (turn === 9 && getWinner() !== true) {
+    round += 1;
+    resetGrid();
   }
 }
 
@@ -83,6 +84,7 @@ function endRound() {
 }
 
 function resetGrid() {
+  console.log(round + " start");
   turn = 0;
 
   for (const button of gridBtn) {
