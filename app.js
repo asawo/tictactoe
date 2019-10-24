@@ -45,7 +45,7 @@ function nextTurn(e) {
     endRound();
   } else if (turn === 9 && getWinner() !== true) {
     round += 1;
-    resetGrid();
+    setTimeout(resetGrid, 1000);
   }
 }
 
