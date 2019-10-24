@@ -2,7 +2,8 @@
 Game function
 - Player clicks buttons to mark with X or O ✅
 - Player to get 3 X or O in a row wins ✅
-- Notify player when they win
+- Handle ties
+- Notify player if they win
 - Add score when a player wins
 - Clear the grid and scores with a reset button  ✅
 */
@@ -50,18 +51,23 @@ function nextTurn(e) {
 function endRound() {
   const winsX = document.getElementById("winsX"),
     winsO = document.getElementById("winsO"),
-    str = " <img src='src/fat_check.svg' height='20'></img>";
+    modalText = document.querySelector("#modalText"),
+    tick = " <img src='src/fat_check.svg' height='20'></img>";
+  let modalPrompt = buttonText + "wins! Next round?";
 
   if (buttonText === circle) {
     buttonText = cross;
     scoreX += 1;
-    winsX.insertAdjacentHTML("beforeend", str);
+    winsX.insertAdjacentHTML("beforeend", tick);
   } else {
     buttonText = circle;
     scoreO += 1;
-    winsO.insertAdjacentHTML("beforeend", str);
+    winsO.insertAdjacentHTML("beforeend", tick);
   }
   round += 1;
+
+  //use document.write?
+  modalText.insertAdjacentHTML("beforeend", modalPrompt);
 
   console.log(
     buttonText +
@@ -73,7 +79,6 @@ function endRound() {
       scoreO +
       ". Time for next round!"
   );
-
   openModal();
 }
 
@@ -159,21 +164,16 @@ resetBtn.addEventListener("click", function() {
   console.log("reset");
 });
 
-//Modal
+//Open modal at end of the round
 const modal = document.querySelector("#modal"),
-  closeBtn = document.querySelector(".close");
-
-closeBtn.addEventListener("click", function() {
-  modal.style.display = "none";
-  resetGrid();
-});
+  closeBtn = document.querySelector("#closeBtn");
 
 function openModal() {
   modal.style.display = "block";
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+closeBtn.addEventListener("click", function() {
+  modal.style.display = "none";
+  resetGrid();
+  console.log("close modal");
+});
