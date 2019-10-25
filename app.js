@@ -12,8 +12,8 @@ Game function
 const resetBtn = document.querySelector("#resetBtn"),
   grid = document.querySelector("#grid"),
   gridBtn = grid.querySelectorAll("div.rows > button"),
-  cross = "<img src='src/fat_cross.svg'></img>",
-  circle = "<img src='src/fat_circle.svg'</img>";
+  cross = "<img src='src/cross.svg'></img>",
+  circle = "<img src='src/circle.svg'</img>";
 
 for (const button of gridBtn) {
   button.addEventListener("click", nextTurn);
@@ -52,7 +52,7 @@ function nextTurn(e) {
 function endRound() {
   const winsX = document.getElementById("winsX"),
     winsO = document.getElementById("winsO"),
-    tick = " <img src='src/fat_check.svg'></img>";
+    tick = " <img src='src/check.svg'></img>";
 
   if (buttonText === circle) {
     buttonText = cross;
