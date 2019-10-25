@@ -3,8 +3,8 @@ Game function
 - Player clicks buttons to mark with X or O ✅
 - Player to get 3 X or O in a row wins ✅
 - Handle ties ✅
-- Notify player if they win
-- Add score when a player wins
+- Notify player if they win ✅
+- Add score when a player wins ✅
 - Clear the grid and scores with a reset button  ✅
 */
 
@@ -169,7 +169,7 @@ const modal = document.querySelector("#modal"),
 function openModal() {
   let modalPrompt = buttonText + "<br />Next round?<br />";
 
-  modalText.insertAdjacentHTML("beforeend", modalPrompt);
+  modalText.innerHTML = modalPrompt;
   modal.style.display = "block";
 }
 
