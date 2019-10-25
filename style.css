@@ -110,7 +110,8 @@ h3 {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  text-align: center;
+  margin: 30% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
@@ -121,15 +122,13 @@ h3 {
   height: 50px;
 }
 
-.close {
+#closeBtn {
+  margin-top: 10px;
   color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+#closeBtn:hover,
+#closeBtn:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
