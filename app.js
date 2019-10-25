@@ -52,9 +52,7 @@ function nextTurn(e) {
 function endRound() {
   const winsX = document.getElementById("winsX"),
     winsO = document.getElementById("winsO"),
-    modalText = document.querySelector("#modalText"),
-    tick = " <img src='src/fat_check.svg'></img><br />";
-  let modalPrompt = buttonText + "<br />Next round?<br />";
+    tick = " <img src='src/fat_check.svg'></img>";
 
   if (buttonText === circle) {
     buttonText = cross;
@@ -67,9 +65,6 @@ function endRound() {
   }
   round += 1;
 
-  //use document.write?
-  modalText.insertAdjacentHTML("beforeend", modalPrompt);
-
   console.log(
     buttonText +
       " wins round " +
@@ -80,6 +75,7 @@ function endRound() {
       scoreO +
       ". Time for next round!"
   );
+
   openModal();
 }
 
@@ -171,6 +167,9 @@ const modal = document.querySelector("#modal"),
   closeBtn = document.querySelector("#closeBtn");
 
 function openModal() {
+  let modalPrompt = buttonText + "<br />Next round?<br />";
+
+  modalText.insertAdjacentHTML("beforeend", modalPrompt);
   modal.style.display = "block";
 }
 
