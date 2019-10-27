@@ -50,32 +50,32 @@ body {
   vertical-align: top;
 }
 
-#footer {
+#scoreSection {
   padding-top: 20px;
   width: 315px;
   margin: auto;
 }
 
-#scoreSection {
+#scores {
   width: 200px;
   float: left;
   font-size: 25px;
 }
 
-#scoreSection img {
+#scores img {
   padding: 0;
   margin: 0;
   width: 40px;
   height: 40px;
 }
 
-#footerRight {
+#reset {
   text-align: right;
   width: 110px;
   float: left;
 }
 
-#footerRight button {
+#reset button {
   text-align: center;
   width: 80px;
   height: 60px;
@@ -87,11 +87,11 @@ body {
   border-width: 2px;
 }
 
-#footerRight button:hover {
+#reset button:hover {
   opacity: 0.8;
 }
 
-#footerRight img {
+#reset img {
   padding-right: 10px;
   width: 70px;
   height: 70px;
