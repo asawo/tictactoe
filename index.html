@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="style.css" />
     <title>Tic Tac Toe</title>
   </head>
-  <body>
-    <div class="container" id="header">
+<body>
+  <div id="main">
+    <div id="header">
       <h3 class="title">Tic Tac Toe</h3>
     </div>
     <!--grid-->
@@ -48,23 +49,24 @@
         <button id="resetBtn"><img src="img/clear.svg"></img></button>
       </div>
     </div>
+  </div>
 
     <!--Footer-->
     <div id="footer">
-      <a id="github" class="btn btn-sm" role="button" href="https://github.com/asawo">
-        <i class="fa fa-github"></i>
-      </a>
+      <a href="https://github.com/asawo"><img src="img/octocat.png"></img></a>
+      </button>
     </div>
 
     <!--Modal-->
     <div id="modal" class="modal">
-        <div class="modal-content">
-            <h3>Winner</h3>
-          <div id="modalText">  
-          </div>
-          <button id="closeBtn">Yes</button>
+      <div class="modal-content">
+          <h3>Winner</h3>
+        <div id="modalText">  
         </div>
+        <button id="closeBtn">Yes</button>
       </div>
- </body>
+    </div>
+    
+</body>
   <script src="app.js"></script>
 </html>
