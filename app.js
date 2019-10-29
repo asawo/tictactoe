@@ -8,7 +8,6 @@ Game function
 - Clear the grid and scores with a reset button  ✅
 */
 
-//UI elements
 const resetBtn = document.querySelector("#resetBtn"),
   grid = document.querySelector("#grid"),
   gridBtn = grid.querySelectorAll("div.rows > button"),
@@ -156,13 +155,12 @@ function getWinner() {
   }
 }
 
-//Reset
 resetBtn.addEventListener("click", function() {
   location.reload();
   console.log("reset");
 });
 
-//Open modal at end of the round
+//Modal
 const modal = document.querySelector("#modal"),
   closeBtn = document.querySelector("#closeBtn");
 
