@@ -2,7 +2,7 @@
   "name": "tictactoe",
   "version": "1.0.0",
   "description": "tic tac toe game created with vanilla js",
-  "main": "index.js",
+  "main": "index.html",
   "dependencies": {
     "node-static": "^0.7.11"
   },
