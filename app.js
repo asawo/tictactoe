@@ -1,5 +1,5 @@
 /*
-Game function
+Game functions
 - Player clicks buttons to mark with X or O ✅
 - Player to get 3 X or O in a row wins ✅
 - Handle ties ✅
@@ -9,6 +9,8 @@ Game function
 */
 
 const resetBtn = document.querySelector("#resetBtn"),
+  winsX = document.getElementById("winsX"),
+  winsO = document.getElementById("winsO"),
   grid = document.querySelector("#grid"),
   gridBtn = grid.querySelectorAll("div.rows > button"),
   cross = "<img src='img/cross.svg'></img>",
@@ -33,9 +35,6 @@ function nextTurn(e) {
   }
   document.getElementById(e.target.id).disabled = true;
   turn += 1;
-  console.log(
-    e.target.id + " played, turn " + turn + ", " + buttonText + "'s turn"
-  );
 
   if (getWinner() === true) {
     for (const button of gridBtn) {
@@ -49,9 +48,7 @@ function nextTurn(e) {
 }
 
 function endRound() {
-  const winsX = document.getElementById("winsX"),
-    winsO = document.getElementById("winsO"),
-    tick = " <img src='img/check.svg'></img>";
+  const tick = " <img src='img/check.svg'></img>";
 
   if (buttonText === circle) {
     buttonText = cross;
@@ -64,22 +61,10 @@ function endRound() {
   }
   round += 1;
 
-  console.log(
-    buttonText +
-      " wins round " +
-      round +
-      ". Number of wins for X = " +
-      scoreX +
-      ", O = " +
-      scoreO +
-      ". Time for next round!"
-  );
-
   openModal();
 }
 
 function resetGrid() {
-  console.log(round + " start");
   turn = 0;
 
   for (const button of gridBtn) {
@@ -155,10 +140,13 @@ function getWinner() {
   }
 }
 
-resetBtn.addEventListener("click", function() {
-  location.reload();
-  console.log("reset");
-});
+resetBtn.addEventListener("click", resetGame);
+
+function resetGame() {
+  resetGrid();
+  winsX.innerHTML = cross;
+  winsO.innerHTML = circle;
+}
 
 //Modal
 const modal = document.querySelector("#modal"),
@@ -174,5 +162,4 @@ function openModal() {
 closeBtn.addEventListener("click", function() {
   modal.style.display = "none";
   resetGrid();
-  console.log("close modal");
 });
