@@ -5,7 +5,7 @@ Game functions
 - Handle ties ✅
 - Notify player if they win ✅
 - Add score when a player wins ✅
-- Clear the grid and scores with a reset button  ✅
+- Clear grid and scores with a reset button  ✅
 */
 
 const resetBtn = document.querySelector("#resetBtn"),
@@ -43,14 +43,14 @@ function checkForEnd() {
 }
 
 const winsX = document.getElementById("winsX"),
-  winsO = document.getElementById("winsO");
+  winsO = document.getElementById("winsO"),
+  tick = " <img src='assets/img/check.svg'></img>";
+
 let scoreX = 0,
   scoreO = 0,
   round = 0;
 
 function endRound() {
-  const tick = " <img src='assets/img/check.svg'></img>";
-
   if (buttonText === circle) {
     buttonText = cross;
     scoreX += 1;
@@ -150,7 +150,7 @@ function resetGame() {
   winsO.innerHTML = circle;
 }
 
-//Modal
+// Modal
 const modal = document.querySelector("#modal"),
   closeBtn = document.querySelector("#closeBtn");
 
