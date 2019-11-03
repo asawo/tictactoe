@@ -9,16 +9,8 @@ Game functions
 */
 
 const resetBtn = document.querySelector("#resetBtn"),
-  winsX = document.getElementById("winsX"),
-  winsO = document.getElementById("winsO"),
-  grid = document.querySelector("#grid"),
-  gridBtn = grid.querySelectorAll("div.rows > button"),
-  cross = "<img src='img/cross.svg'></img>",
-  circle = "<img src='img/circle.svg'</img>";
-
-for (const button of gridBtn) {
-  button.addEventListener("click", nextTurn);
-}
+  cross = "<img src='assets/img/cross.svg'></img>",
+  circle = "<img src='assets/img/circle.svg'</img>";
 
 let buttonText = circle,
   turn = 0,
@@ -27,15 +19,21 @@ let buttonText = circle,
   scoreO = 0;
 
 function nextTurn(e) {
-  document.getElementById(e.target.id).innerHTML = buttonText;
+  const buttonPressed = document.getElementById(e.target.id);
+
+  buttonPressed.innerHTML = buttonText;
   if (buttonText === circle) {
     buttonText = cross;
   } else {
     buttonText = circle;
   }
-  document.getElementById(e.target.id).disabled = true;
-  turn += 1;
 
+  buttonPressed.disabled = true;
+  turn += 1;
+  checkForEnd();
+}
+
+function checkForEnd() {
   if (getWinner() === true) {
     for (const button of gridBtn) {
       button.disabled = true;
@@ -47,8 +45,11 @@ function nextTurn(e) {
   }
 }
 
+const winsX = document.getElementById("winsX"),
+  winsO = document.getElementById("winsO");
+
 function endRound() {
-  const tick = " <img src='img/check.svg'></img>";
+  const tick = " <img src='assets/img/check.svg'></img>";
 
   if (buttonText === circle) {
     buttonText = cross;
@@ -63,6 +64,9 @@ function endRound() {
 
   openModal();
 }
+
+const grid = document.querySelector("#grid"),
+  gridBtn = grid.querySelectorAll("div.rows > button");
 
 function resetGrid() {
   turn = 0;
@@ -140,8 +144,6 @@ function getWinner() {
   }
 }
 
-resetBtn.addEventListener("click", resetGame);
-
 function resetGame() {
   resetGrid();
   winsX.innerHTML = cross;
@@ -153,10 +155,17 @@ const modal = document.querySelector("#modal"),
   closeBtn = document.querySelector("#closeBtn");
 
 function openModal() {
-  let modalPrompt = buttonText + "<br />Next round?<br />";
+  const modalPrompt = buttonText + "<br />Next round?<br />";
 
   modalText.innerHTML = modalPrompt;
   modal.style.display = "block";
+}
+
+// Event listeners
+resetBtn.addEventListener("click", resetGame);
+
+for (const button of gridBtn) {
+  button.addEventListener("click", nextTurn);
 }
 
 closeBtn.addEventListener("click", function() {

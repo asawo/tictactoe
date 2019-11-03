@@ -7,14 +7,14 @@ body {
   min-width: 333px;
 }
 
-#main {
+.main {
   min-height: 100%;
   display: flex;
   flex-direction: column;
   margin: 0px;
 }
 
-#header {
+.header {
   width: 100%;
   margin-top: auto;
   padding-bottom: 10px;

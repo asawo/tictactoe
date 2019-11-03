@@ -1,5 +1,5 @@
-var static = require("node-static");
-var file = new static.Server();
+const static = require("node-static");
+const file = new static.Server();
 require("http")
   .createServer(function(request, response) {
     request
