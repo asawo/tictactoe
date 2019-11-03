@@ -13,10 +13,7 @@ const resetBtn = document.querySelector("#resetBtn"),
   circle = "<img src='assets/img/circle.svg'</img>";
 
 let buttonText = circle,
-  turn = 0,
-  round = 0,
-  scoreX = 0,
-  scoreO = 0;
+  turn = 0;
 
 function nextTurn(e) {
   const buttonPressed = document.getElementById(e.target.id);
@@ -47,6 +44,9 @@ function checkForEnd() {
 
 const winsX = document.getElementById("winsX"),
   winsO = document.getElementById("winsO");
+let scoreX = 0,
+  scoreO = 0,
+  round = 0;
 
 function endRound() {
   const tick = " <img src='assets/img/check.svg'></img>";
