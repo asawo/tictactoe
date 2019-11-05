@@ -5,7 +5,7 @@ Minimalist tic tac toe game using just the basics 🔨
 A project to learn web development. For now I have no plans to do further work on this, but if you have any ideas, feedback, comments, etc. please feel free to reach out to me 🙂
 
 ## Where is it available?
-Deployed on Heroku [here](https://vanilla-js-tictactoe-game.herokuapp.com/) 💻
+Deployed on [Heroku](https://vanilla-js-tictactoe.herokuapp.com/) 💻
 
 ### What it looks like
 ![Gif loading...](https://media.giphy.com/media/MePjkDcru0bbokQCD0/giphy.gif)
